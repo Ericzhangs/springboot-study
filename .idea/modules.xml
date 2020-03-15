@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-01/spring-boot-01.iml" filepath="$PROJECT_DIR$/spring-boot-01/spring-boot-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-mq/spring-boot-mq.iml" filepath="$PROJECT_DIR$/spring-boot-mq/spring-boot-mq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-redis/spring-boot-redis.iml" filepath="$PROJECT_DIR$/spring-boot-redis/spring-boot-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/springboot-study.iml" filepath="$PROJECT_DIR$/.idea/springboot-study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-zk-consumer/springboot-zk-consumer.iml" filepath="$PROJECT_DIR$/springboot-zk-consumer/springboot-zk-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-zk-provider/springboot-zk-provider.iml" filepath="$PROJECT_DIR$/springboot-zk-provider/springboot-zk-provider.iml" />
+    </modules>
+  </component>
+</project>
