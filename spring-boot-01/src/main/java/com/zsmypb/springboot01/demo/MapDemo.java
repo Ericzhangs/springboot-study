@@ -1,10 +1,9 @@
 package com.zsmypb.springboot01.demo;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
 import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * @author zhangs.
@@ -25,17 +24,26 @@ public class MapDemo {
     }
 
     public static void testConcurrentHashMapPut() {
-        ConcurrentHashMap hashMap = new ConcurrentHashMap();
-        for (int i = 126; i < 140; i++)
+        ConcurrentHashMap hashMap = new ConcurrentHashMap(16);
+        int v1 = 126;
+        int v2 = 140;
+        for (int i = v1; i < v2; i++) {
             hashMap.put(i, i);
+        }
         System.out.println(hashMap);
     }
 
     public static void testHashMapThread() {
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
+                .setNameFormat("demo-pool-%d").build();
+        ExecutorService executorService = new ThreadPoolExecutor(5, 200,
+                0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
+//        ExecutorService executorService = ThreadPoolExecutor(100);
         HashMap map = new HashMap(2 ^ 14);
         CountDownLatch count = new CountDownLatch(10000);
-        for (int i = 0; i < 10000; i++) {
+        int size = 10000;
+        for (int i = 0; i < size; i++) {
             int temp = i;
             executorService.submit(() -> {
                 count.countDown();
@@ -48,9 +56,11 @@ public class MapDemo {
     }
 
     public static void testMapPut() {
-        HashMap hashMap = new HashMap();
-        for (int i = 126; i < 140; i++) {
-            if (i >= 132){
+        HashMap hashMap = new HashMap(16);
+        int v1 = 126;
+        int v2 = 140;
+        for (int i = v1; i < v2; i++) {
+            if (i >= 132) {
                 hashMap.put(i, i);
             } else {
                 hashMap.put(i, i);
