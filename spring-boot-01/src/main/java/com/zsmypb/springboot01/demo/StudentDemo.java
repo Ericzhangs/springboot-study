@@ -74,9 +74,9 @@ public class StudentDemo {
 @NoArgsConstructor
 @Builder
 class StudentVo {
-    private String student; // 姓名
-    private String gender;  // 性别
-    private Integer stature; // 身高
+    private String student;
+    private String gender;
+    private Integer stature;
 }
 
 @Data
