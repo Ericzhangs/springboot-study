@@ -1,5 +1,6 @@
 package com.zsmypb.springboot01;
 
+import com.zsmypb.springboot01.config.scan.NRpcScan;
 import com.zsmypb.springboot01.vo.Book;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.SpringApplication;
@@ -52,6 +53,7 @@ import org.springframework.web.context.WebApplicationContext;
  *       @ConfigurationProperties(prefix = "spring.http") 从配置文件中获取指定的值和bean的属性进行绑定
  *       public class HttpProperties {
  */
+@NRpcScan(basePackage = {"com.zsmypb.springboot01.config.scan"})
 @SpringBootApplication
 public class SpringBoot01Application {
 

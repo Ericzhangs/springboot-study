@@ -1,6 +1,6 @@
 package com.zsmypb.springbootzkconsumer.user.service;
 
-import com.zsmypb.springbootzkprovider.ticket.service.TicketService;
+import com.zsmypb.springbootzkutil.service.TicketService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 

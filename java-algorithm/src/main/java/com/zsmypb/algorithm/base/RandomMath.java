@@ -17,17 +17,24 @@ public class RandomMath {
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
-                if (count[array[i]] == null) count[array[i]] = new Node(array[i], 0);
+                if (count[array[i]] == null) {
+                    count[array[i]] = new Node(array[i], 0);
+                }
                 count[array[i]].count++;
             }
         }
 
         Arrays.sort(count, (o1, o2) -> {
             if (o1 == null || o2 == null) {
-                if (o1 == null && o2 != null) return -1;
-                else if (o1 != null && o2 == null) return 1;
+                if (o1 == null && o2 != null) {
+                    return -1;
+                } else if (o1 != null && o2 == null) {
+                    return 1;
+                }
                 return 0;
-            } else return o2.count - o1.count;
+            } else {
+                return o2.count - o1.count;
+            }
         });
 
         for (int i = 0; i < count.length; i++) {

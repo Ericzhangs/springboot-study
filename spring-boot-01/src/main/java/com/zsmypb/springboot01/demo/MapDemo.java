@@ -18,9 +18,9 @@ public class MapDemo {
 
 
     public static void main(String[] args) {
-
 //        testMapPut();
 //        testConcurrentHashMapPut();
+        testHashMapThread();
     }
 
     public static void testConcurrentHashMapPut() {
@@ -40,9 +40,10 @@ public class MapDemo {
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
 //        ExecutorService executorService = ThreadPoolExecutor(100);
-        HashMap map = new HashMap(2 ^ 14);
+//        HashMap map = new HashMap(2 ^ 14);
+        ConcurrentHashMap map = new ConcurrentHashMap(2 ^ 14);
         CountDownLatch count = new CountDownLatch(10000);
-        int size = 10000;
+        int size = 1000;
         for (int i = 0; i < size; i++) {
             int temp = i;
             executorService.submit(() -> {
@@ -51,8 +52,8 @@ public class MapDemo {
                 System.out.println(Thread.currentThread().getName() + " map: " + map.size());
             });
         }
-        System.out.println(count.getCount());
-        System.out.println(map.size());
+        System.out.println("------ " + count.getCount());
+        System.out.println("++++++ " + map.size());
     }
 
     public static void testMapPut() {

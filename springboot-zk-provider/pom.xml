@@ -25,6 +25,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.zsmypb</groupId>
+			<artifactId>springboot-zk-util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -41,11 +47,12 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.github.sgroschupf/zkclient -->
-		<dependency>
-			<groupId>com.github.sgroschupf</groupId>
-			<artifactId>zkclient</artifactId>
-			<version>0.1</version>
-		</dependency>
+		<!-- dubbo 2.5以前使用zkclient-->
+<!--		<dependency>-->
+<!--			<groupId>com.github.sgroschupf</groupId>-->
+<!--			<artifactId>zkclient</artifactId>-->
+<!--			<version>0.1</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>

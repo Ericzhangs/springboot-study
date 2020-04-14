@@ -25,7 +25,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.zsmypb</groupId>
-			<artifactId>springboot-zk-provider</artifactId>
+			<artifactId>springboot-zk-util</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

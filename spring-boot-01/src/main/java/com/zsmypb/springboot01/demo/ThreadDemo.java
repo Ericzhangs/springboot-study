@@ -1,5 +1,7 @@
 package com.zsmypb.springboot01.demo;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @author zhangs.
  * sleep wait
@@ -8,6 +10,8 @@ package com.zsmypb.springboot01.demo;
  *
  */
 public class ThreadDemo {
+
+    ReentrantLock reentrantLock = new ReentrantLock();
 
     public static void main(String[] args) {
 
